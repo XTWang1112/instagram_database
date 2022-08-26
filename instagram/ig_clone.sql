@@ -7,8 +7,6 @@ CREATE TABLE  users(
   created_at TIMESTAMP DEFAULT NOW()
 );
 
-INSERT INTO users(username) VALUES('BlueTheCat'), ('Dawang'), ('Yuchen');
-
 CREATE TABLE  photos(
   id INT AUTO_INCREMENT  PRIMARY KEY,
   image_url VARCHAR(255) NOT NULL,
@@ -17,14 +15,6 @@ CREATE TABLE  photos(
   FOREIGN KEY(user_id)  REFERENCES users(id)
 );
 
-INSERt INTO photos(image_url, user_id) VALUES
-('/hsbfkhbd',  1),
-('/sfvw',  2),
-('/febvbw',  2);
-
-SELECT  image_url, photos.created_at,  users.username
-FROM  photos
-INNER  JOIN users  ON  photos.user_id  = users.id;
 
  CREATE TABLE comments(
   id INT AUTO_INCREMENT  PRIMARY KEY,
